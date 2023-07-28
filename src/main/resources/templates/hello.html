@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Spring MVC view layer: Thymeleaf vs. JSP</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+
+<body>
+
+<h2>This is a Thymeleaf template</h2>
+
+<!--data는 html파일명을 리턴할때 넘어온 모델의 키값-->
+<p th:text="'안녕하세요. ' + ${data}">안녕하세요. 손님</p>
+</body>
+
+</html>
