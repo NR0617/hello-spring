@@ -19,6 +19,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// AssertJ 라이브러리 추가
+	testImplementation 'org.assertj:assertj-core:3.20.2'
 }
 
 tasks.named('test') {
