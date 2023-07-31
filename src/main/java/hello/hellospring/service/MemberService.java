@@ -12,7 +12,7 @@ public class MemberService {
 
     private final  MemoryMemberRepository memberRepository;
     public MemberService(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
+        this.memberRepository = (MemoryMemberRepository) memberRepository;
     }
     /*
     회원 가입
