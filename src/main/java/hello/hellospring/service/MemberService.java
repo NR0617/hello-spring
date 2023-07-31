@@ -10,18 +10,16 @@ import java.util.Optional;
 // 서비스 패키지는 비즈니스에 가까운 이름으로 설정한다
 public class MemberService {
 
-    private final  MemoryMemberRepository memberRepository;
+    private final  MemberRepository memberRepository;
     public MemberService(MemberRepository memberRepository) {
-        this.memberRepository = (MemoryMemberRepository) memberRepository;
+        this.memberRepository = memberRepository;
     }
     /*
-    회원 가입
+    회원 가입 
      */
     public Long join(Member member) {
         // 같은 이름이 있는 중복 회원 x
         validateDuplicateMember(member);
-
-
         memberRepository.save(member);
         return member.getId();
     }

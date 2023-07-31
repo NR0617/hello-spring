@@ -9,7 +9,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.Optional;
 
 
 class MemoryMemberRepositoryTest {
@@ -26,7 +25,7 @@ class MemoryMemberRepositoryTest {
 
         repository.save(member);
 
-        Member result = repository.findById(member.getId()).get();
+        Member result = repository.findById(member.getId()).get(); //get을 붙이면 옵션을 하나 까서 가져올 수 있
         System.out.println("result = " + (result == member));
 
         assertEquals(member, result);

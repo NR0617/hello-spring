@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.fail;
 
 class MemberServiceTest {
 
@@ -55,6 +54,7 @@ class MemberServiceTest {
 
         //when
         memberService.join(member1);
+        //assertThrows 의 두번째 매개변수(람다)가 실행이 될건데 첫번째 매개변수의 예외가 터져야 된다
         IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
 
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다");

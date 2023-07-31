@@ -7,7 +7,7 @@ import java.util.*;
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>(); //실무에서는 동시성 이슈가 있을 수 있어서 ConcurrentHashMap사용
-    private static long sequence = 0L; // 실무는 동시성문제를 고려해서 어텀Long
+    private static long sequence = 0L; // 키값 생성, 실무는 동시성문제를 고려해서 어텀Long
 
     @Override
     public Member save(Member member) {
@@ -18,6 +18,7 @@ public class MemoryMemberRepository implements MemberRepository {
 
     @Override
     public Optional<Member> findById(Long id) {
+
         return Optional.ofNullable(store.get(id));
     }
 
