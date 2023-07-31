@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 // 서비스 패키지는 비즈니스에 가까운 이름으로 설정한다
-@Service
+
 public class MemberService {
 
-    private final  MemberRepository memberRepository;
-    @Autowired
+    private MemberRepository memberRepository;
+
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
