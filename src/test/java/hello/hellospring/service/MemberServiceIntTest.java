@@ -17,7 +17,7 @@ public class MemberServiceIntTest {
     @Autowired MemberRepository memberRepository;
 
     @Test
-    @Commit // DB에 결과를 남긴다
+   // @Commit // DB에 결과를 남긴다
     void 회원가입() {
         //given
         Member member = new Member();

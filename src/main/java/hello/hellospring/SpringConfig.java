@@ -10,16 +10,19 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SpringConfig {
 
+    //스프링 데이터 JPA가 만들어놓은게 등록이 된다.
     private final MemberRepository memberRepository;
 
     @Autowired
     public SpringConfig(MemberRepository memberRepository) {
+
         this.memberRepository = memberRepository;
     }
 
-
+    // 멤버서비스와 의존관계를 setting
     @Bean
     public MemberService memberService() {
+
         return new MemberService(memberRepository);
     }
 
@@ -29,6 +32,6 @@ public class SpringConfig {
         //return new MemoryMemberRepository();
         //return new JdbcTemplateMemberRepository(dataSource);
        // return new JpaMemberRepository(em);
-//        return null;
+
 //    }
 }
